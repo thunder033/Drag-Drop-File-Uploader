@@ -63,7 +63,7 @@ FileDrop.prototype.Init = function() {
     }
     
      //Load the file drop template and initiate behaviors
-    $j.get(this.widgetDir+this.templateLocation, (function(fileDrop){
+    $j.get(this.widgetDir+this.templateLocation, {}, (function(fileDrop){
         return function(data)
         {
             fileDrop.dropContainer = $j(data);
@@ -101,7 +101,7 @@ FileDrop.prototype.Init = function() {
                         console.log("capturing input file...");
                         fileDrop.FileSelectHandler.call(fileDrop, e.originalEvent);
                         }
-                })(fileDrop));
+                })(fileDrop), "html");
             }
         }
     })(this));

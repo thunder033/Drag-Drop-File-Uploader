@@ -16,6 +16,7 @@
 	border: 2px #aaa dashed;
 	padding: .5em;
     margin: .5em 0;
+    font-family: "Arial", sans-serif;
 }
 .file-drop.hover {
 	background: #e6ffd6;
@@ -189,3 +190,12 @@
 .file-drop.active .filename, .file-drop.full .filename, .file-drop.full .input-wrapper {
 	display: none;
 }
+
+.cf:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
