@@ -21,7 +21,7 @@ def upload_temp_file
         #.read can only be performed once
         File.open(@path, "wb") { |f| f.write(request.env['rack.input'].read) }
         
-        @previewPath = "../preview/dir/" + request.session_options[:id] + "/" + @fileName
+        @previewPath = "../relative/path/to/uploads/" + request.session_options[:id] + "/" + @fileName
     end
     
     #return the file id to the client
