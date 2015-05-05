@@ -32,7 +32,7 @@ function FileDrop(container, widgetDir) {
     this.allowedTypes = ["png","jpeg","jpg"];
     this.fileUploadURL = "file-drop-handler.php";
     this.templateLocation = "file-drop.php";
-    this.autoUpload = false;
+    this.autoUpload =  true;
     this.fileParseCallback = null;
     this.cssURL = "file-drop.css?v="+parseInt(Math.random() * 100000); //dev salt to force css reload
     
@@ -259,7 +259,7 @@ FileDrop.prototype.ParseFile = function(f) {
              * If the validation callback returns undefined or if it took the async callback argument (it will have 3 arguments
              * if it did), we store the file and wait for the async callback to be executed
              */
-            if(typeof valid == "undefined" || this.fileParseCallback.length == 3)
+            if(typeof valid == "undefined" || this.fileParseCallback && this.fileParseCallback.length == 3)
             {
                 console.log("suspending file");
                 this.suspendedFile = {file: f, fileBlock: fileBlock, error: error};
@@ -361,6 +361,8 @@ FileDrop.prototype.UploadFile = function(file, fileBlock) {
                             //if its an image, give a preview of it
                             if(["png","jpg","gif","jpeg"].indexOf(fileExt.toLowerCase()) > -1)
                             {
+                                
+                                
                                 var image = new Image();
                                 //center the image vertically
                                 image.onload = function()
