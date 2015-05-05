@@ -14,5 +14,7 @@ The PHP backend is somehwat lacking, becuase this was originally deployed on a R
 script shortly and plan to expand the PHP script to include the full functionality.
 
 See test.html for example of how to create and initiate FileDrop.
+
+Originally based on this SitePoint tutorial: http://www.sitepoint.com/html5-ajax-file-upload/
  
 Demo located at: http://thunderlab.net/FileDrop/
