@@ -11,6 +11,8 @@ File-Drop is an AJAX driven file upload widget with the following features:
 - Preview of uploaded image files
 - File tracking by ID
  
+File-Drop does rely on jQuery, but other than, it is self contained.
+
 The PHP backend is somehwat lacking, becuase this was originally deployed on a Rails server.
 
 See test.html for example of how to create and initiate FileDrop.
